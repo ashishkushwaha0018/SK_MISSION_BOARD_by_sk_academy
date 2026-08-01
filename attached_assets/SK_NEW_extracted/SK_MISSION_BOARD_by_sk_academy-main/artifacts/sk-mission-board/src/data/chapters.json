@@ -1,0 +1,623 @@
+[
+  {
+    "id": "math-ch-1",
+    "subjectId": "mathematics",
+    "chapterNumber": 1,
+    "title": "Real Numbers",
+    "description": "Euclid's division lemma, the fundamental theorem of arithmetic, and decimal expansions of irrational numbers.",
+    "pdfUrl": "/pdfs/mathematics/chapter-1.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-1.pdf"
+  },
+  {
+    "id": "math-ch-2",
+    "subjectId": "mathematics",
+    "chapterNumber": 2,
+    "title": "Polynomials",
+    "description": "Zeros of polynomials, relationship between zeros and coefficients of quadratic and cubic polynomials.",
+    "pdfUrl": "/pdfs/mathematics/chapter-2.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-2.pdf"
+  },
+  {
+    "id": "math-ch-3",
+    "subjectId": "mathematics",
+    "chapterNumber": 3,
+    "title": "Pair of Linear Equations in Two Variables",
+    "description": "Graphical and algebraic methods — substitution, elimination, and cross-multiplication for solving linear systems.",
+    "pdfUrl": "/pdfs/mathematics/chapter-3.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-3.pdf"
+  },
+  {
+    "id": "math-ch-4",
+    "subjectId": "mathematics",
+    "chapterNumber": 4,
+    "title": "Quadratic Equations",
+    "description": "Standard form, factorisation, completing the square, and the quadratic formula with nature of roots.",
+    "pdfUrl": "/pdfs/mathematics/chapter-4.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-4.pdf"
+  },
+  {
+    "id": "math-ch-5",
+    "subjectId": "mathematics",
+    "chapterNumber": 5,
+    "title": "Arithmetic Progressions",
+    "description": "General term, sum of n terms, and real-life applications of arithmetic progressions (AP).",
+    "pdfUrl": "/pdfs/mathematics/chapter-5.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-5.pdf"
+  },
+  {
+    "id": "math-ch-6",
+    "subjectId": "mathematics",
+    "chapterNumber": 6,
+    "title": "Triangles",
+    "description": "Similarity criteria, Basic Proportionality Theorem, Pythagoras theorem and its converse with proofs.",
+    "pdfUrl": "/pdfs/mathematics/chapter-6.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-6.pdf"
+  },
+  {
+    "id": "math-ch-7",
+    "subjectId": "mathematics",
+    "chapterNumber": 7,
+    "title": "Coordinate Geometry",
+    "description": "Distance formula, section formula, and area of a triangle using coordinates on the Cartesian plane.",
+    "pdfUrl": "/pdfs/mathematics/chapter-7.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-7.pdf"
+  },
+  {
+    "id": "math-ch-8",
+    "subjectId": "mathematics",
+    "chapterNumber": 8,
+    "title": "Introduction to Trigonometry",
+    "description": "Trigonometric ratios, identities, and values of standard angles — 0°, 30°, 45°, 60°, and 90°.",
+    "pdfUrl": "/pdfs/mathematics/chapter-8.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-8.pdf"
+  },
+  {
+    "id": "math-ch-9",
+    "subjectId": "mathematics",
+    "chapterNumber": 9,
+    "title": "Some Applications of Trigonometry",
+    "description": "Heights and distances using angles of elevation and depression in real-world scenarios.",
+    "pdfUrl": "/pdfs/mathematics/chapter-9.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-9.pdf"
+  },
+  {
+    "id": "math-ch-10",
+    "subjectId": "mathematics",
+    "chapterNumber": 10,
+    "title": "Circles",
+    "description": "Tangent to a circle, number of tangents from an external point, and related theorems with proofs.",
+    "pdfUrl": "/pdfs/mathematics/chapter-10.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-10.pdf"
+  },
+  {
+    "id": "math-ch-11",
+    "subjectId": "mathematics",
+    "chapterNumber": 11,
+    "title": "Areas Related to Circles",
+    "description": "Perimeter and area of a circle, sector and segment areas, and combinations with plane figures.",
+    "pdfUrl": "/pdfs/mathematics/chapter-11.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-11.pdf"
+  },
+  {
+    "id": "math-ch-12",
+    "subjectId": "mathematics",
+    "chapterNumber": 12,
+    "title": "Surface Areas and Volumes",
+    "description": "Surface area and volume of combinations of solids — cone, cylinder, sphere, hemisphere and frustum.",
+    "pdfUrl": "/pdfs/mathematics/chapter-12.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-12.pdf"
+  },
+  {
+    "id": "math-ch-13",
+    "subjectId": "mathematics",
+    "chapterNumber": 13,
+    "title": "Statistics",
+    "description": "Mean, median and mode of grouped data, cumulative frequency distribution, and ogive curves.",
+    "pdfUrl": "/pdfs/mathematics/chapter-13.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-13.pdf"
+  },
+  {
+    "id": "math-ch-14",
+    "subjectId": "mathematics",
+    "chapterNumber": 14,
+    "title": "Probability",
+    "description": "Classical definition of probability, simple events, and theoretical probability of everyday experiments.",
+    "pdfUrl": "/pdfs/mathematics/chapter-14.pdf",
+    "downloadUrl": "/pdfs/mathematics/chapter-14.pdf"
+  },
+  {
+    "id": "sci-ch-1",
+    "subjectId": "science",
+    "chapterNumber": 1,
+    "title": "Chemical Reactions and Equations",
+    "description": "Types of chemical reactions — combination, decomposition, displacement — and balancing chemical equations.",
+    "pdfUrl": "/pdfs/science/chapter-1.pdf",
+    "downloadUrl": "/pdfs/science/chapter-1.pdf"
+  },
+  {
+    "id": "sci-ch-2",
+    "subjectId": "science",
+    "chapterNumber": 2,
+    "title": "Acids, Bases and Salts",
+    "description": "Properties of acids and bases, the pH scale, neutralisation reactions, and preparation of common salts.",
+    "pdfUrl": "/pdfs/science/chapter-2.pdf",
+    "downloadUrl": "/pdfs/science/chapter-2.pdf"
+  },
+  {
+    "id": "sci-ch-3",
+    "subjectId": "science",
+    "chapterNumber": 3,
+    "title": "Metals and Non-Metals",
+    "description": "Physical and chemical properties, reactivity series, extraction of metals, and corrosion prevention.",
+    "pdfUrl": "/pdfs/science/chapter-3.pdf",
+    "downloadUrl": "/pdfs/science/chapter-3.pdf"
+  },
+  {
+    "id": "sci-ch-4",
+    "subjectId": "science",
+    "chapterNumber": 4,
+    "title": "Carbon and its Compounds",
+    "description": "Covalent bonding in carbon, homologous series, functional groups, soaps and detergents.",
+    "pdfUrl": "/pdfs/science/chapter-4.pdf",
+    "downloadUrl": "/pdfs/science/chapter-4.pdf"
+  },
+  {
+    "id": "sci-ch-5",
+    "subjectId": "science",
+    "chapterNumber": 5,
+    "title": "Life Processes",
+    "description": "Nutrition, respiration, transportation and excretion in plants, animals and the human body.",
+    "pdfUrl": "/pdfs/science/chapter-5.pdf",
+    "downloadUrl": "/pdfs/science/chapter-5.pdf"
+  },
+  {
+    "id": "sci-ch-6",
+    "subjectId": "science",
+    "chapterNumber": 6,
+    "title": "Control and Coordination",
+    "description": "Nervous system, brain structure, reflex action, hormones and the endocrine system in humans and plants.",
+    "pdfUrl": "/pdfs/science/chapter-6.pdf",
+    "downloadUrl": "/pdfs/science/chapter-6.pdf"
+  },
+  {
+    "id": "sci-ch-7",
+    "subjectId": "science",
+    "chapterNumber": 7,
+    "title": "How do Organisms Reproduce?",
+    "description": "Asexual and sexual reproduction in plants and animals, pollination, fertilisation and human reproductive system.",
+    "pdfUrl": "/pdfs/science/chapter-7.pdf",
+    "downloadUrl": "/pdfs/science/chapter-7.pdf"
+  },
+  {
+    "id": "sci-ch-8",
+    "subjectId": "science",
+    "chapterNumber": 8,
+    "title": "Heredity",
+    "description": "Mendelian laws of inheritance, dominant and recessive traits, sex determination, and evolution basics.",
+    "pdfUrl": "/pdfs/science/chapter-8.pdf",
+    "downloadUrl": "/pdfs/science/chapter-8.pdf"
+  },
+  {
+    "id": "sci-ch-9",
+    "subjectId": "science",
+    "chapterNumber": 9,
+    "title": "Light — Reflection and Refraction",
+    "description": "Laws of reflection, spherical mirrors, refraction through lenses, lens formula and power of a lens.",
+    "pdfUrl": "/pdfs/science/chapter-9.pdf",
+    "downloadUrl": "/pdfs/science/chapter-9.pdf"
+  },
+  {
+    "id": "sci-ch-10",
+    "subjectId": "science",
+    "chapterNumber": 10,
+    "title": "The Human Eye and the Colourful World",
+    "description": "Structure of the eye, defects of vision, dispersion of light, atmospheric refraction and scattering.",
+    "pdfUrl": "/pdfs/science/chapter-10.pdf",
+    "downloadUrl": "/pdfs/science/chapter-10.pdf"
+  },
+  {
+    "id": "sci-ch-11",
+    "subjectId": "science",
+    "chapterNumber": 11,
+    "title": "Electricity",
+    "description": "Ohm's law, resistance, series and parallel circuits, heating effect of electric current and electric power.",
+    "pdfUrl": "/pdfs/science/chapter-11.pdf",
+    "downloadUrl": "/pdfs/science/chapter-11.pdf"
+  },
+  {
+    "id": "sci-ch-12",
+    "subjectId": "science",
+    "chapterNumber": 12,
+    "title": "Magnetic Effects of Electric Current",
+    "description": "Oersted's experiment, Fleming's rules, electric motor, electromagnetic induction and AC/DC generators.",
+    "pdfUrl": "/pdfs/science/chapter-12.pdf",
+    "downloadUrl": "/pdfs/science/chapter-12.pdf"
+  },
+  {
+    "id": "sci-ch-13",
+    "subjectId": "science",
+    "chapterNumber": 13,
+    "title": "Our Environment",
+    "description": "Ecosystem components, food chains, ozone layer depletion, and management of waste and natural resources.",
+    "pdfUrl": "/pdfs/science/chapter-13.pdf",
+    "downloadUrl": "/pdfs/science/chapter-13.pdf"
+  },
+  {
+    "id": "sst-ch-1",
+    "subjectId": "social-science",
+    "chapterNumber": 1,
+    "title": "The Rise of Nationalism in Europe",
+    "description": "French Revolution impact, rise of nation-states, Bismarck, Garibaldi and unification of Germany and Italy.",
+    "pdfUrl": "/pdfs/social-science/chapter-1.pdf",
+    "downloadUrl": "/pdfs/social-science/chapter-1.pdf"
+  },
+  {
+    "id": "sst-ch-2",
+    "subjectId": "social-science",
+    "chapterNumber": 2,
+    "title": "Nationalism in India",
+    "description": "Non-Cooperation, Civil Disobedience and Quit India Movements; role of Gandhi and mass participation.",
+    "pdfUrl": "/pdfs/social-science/chapter-2.pdf",
+    "downloadUrl": "/pdfs/social-science/chapter-2.pdf"
+  },
+  {
+    "id": "sst-ch-3",
+    "subjectId": "social-science",
+    "chapterNumber": 3,
+    "title": "The Making of a Global World",
+    "description": "Pre-modern world trade, colonialism, the two World Wars, the Great Depression and post-war recovery.",
+    "pdfUrl": "/pdfs/social-science/chapter-3.pdf",
+    "downloadUrl": "/pdfs/social-science/chapter-3.pdf"
+  },
+  {
+    "id": "sst-ch-4",
+    "subjectId": "social-science",
+    "chapterNumber": 4,
+    "title": "The Age of Industrialisation",
+    "description": "Proto-industrialisation, the factory system, industrialisation in India under colonial rule and its effects.",
+    "pdfUrl": "/pdfs/social-science/chapter-4.pdf",
+    "downloadUrl": "/pdfs/social-science/chapter-4.pdf"
+  },
+  {
+    "id": "sst-ch-5",
+    "subjectId": "social-science",
+    "chapterNumber": 5,
+    "title": "Resources and Development",
+    "description": "Types of resources, resource planning in India, land use, soil types and soil conservation methods.",
+    "pdfUrl": "/pdfs/social-science/chapter-5.pdf",
+    "downloadUrl": "/pdfs/social-science/chapter-5.pdf"
+  },
+  {
+    "id": "sst-ch-6",
+    "subjectId": "social-science",
+    "chapterNumber": 6,
+    "title": "Forest and Wildlife Resources",
+    "description": "Types and distribution of forests, conservation of flora and fauna, community and government initiatives.",
+    "pdfUrl": "/pdfs/social-science/chapter-6.pdf",
+    "downloadUrl": "/pdfs/social-science/chapter-6.pdf"
+  },
+  {
+    "id": "sst-ch-7",
+    "subjectId": "social-science",
+    "chapterNumber": 7,
+    "title": "Water Resources",
+    "description": "Water scarcity, rainwater harvesting, multi-purpose river projects, dams and their social and ecological impacts.",
+    "pdfUrl": "/pdfs/social-science/chapter-7.pdf",
+    "downloadUrl": "/pdfs/social-science/chapter-7.pdf"
+  },
+  {
+    "id": "sst-ch-8",
+    "subjectId": "social-science",
+    "chapterNumber": 8,
+    "title": "Agriculture",
+    "description": "Types of farming, major crops, technological reforms, food security and challenges of Indian agriculture.",
+    "pdfUrl": "/pdfs/social-science/chapter-8.pdf",
+    "downloadUrl": "/pdfs/social-science/chapter-8.pdf"
+  },
+  {
+    "id": "sst-ch-9",
+    "subjectId": "social-science",
+    "chapterNumber": 9,
+    "title": "Power Sharing",
+    "description": "Why power sharing is important, horizontal and vertical sharing, coalition governments and their significance.",
+    "pdfUrl": "/pdfs/social-science/chapter-9.pdf",
+    "downloadUrl": "/pdfs/social-science/chapter-9.pdf"
+  },
+  {
+    "id": "sst-ch-10",
+    "subjectId": "social-science",
+    "chapterNumber": 10,
+    "title": "Federalism",
+    "description": "Federal features of India, decentralisation, Panchayati Raj and local self-government institutions.",
+    "pdfUrl": "/pdfs/social-science/chapter-10.pdf",
+    "downloadUrl": "/pdfs/social-science/chapter-10.pdf"
+  },
+  {
+    "id": "sst-ch-11",
+    "subjectId": "social-science",
+    "chapterNumber": 11,
+    "title": "Development",
+    "description": "Different notions of development, national income, per capita income, HDI and sustainable development.",
+    "pdfUrl": "/pdfs/social-science/chapter-11.pdf",
+    "downloadUrl": "/pdfs/social-science/chapter-11.pdf"
+  },
+  {
+    "id": "sst-ch-12",
+    "subjectId": "social-science",
+    "chapterNumber": 12,
+    "title": "Sectors of the Indian Economy",
+    "description": "Primary, secondary and tertiary sectors, organised vs unorganised work, employment and GDP contribution.",
+    "pdfUrl": "/pdfs/social-science/chapter-12.pdf",
+    "downloadUrl": "/pdfs/social-science/chapter-12.pdf"
+  },
+  {
+    "id": "hindi-ch-1",
+    "subjectId": "hindi",
+    "chapterNumber": 1,
+    "title": "Surdas — Pad",
+    "description": "Kshitij: Surdas ke do pad — Udho, man na bhaye das hajar and Meri bhav baadha hari — with poetic analysis.",
+    "pdfUrl": "/pdfs/hindi/chapter-1.pdf",
+    "downloadUrl": "/pdfs/hindi/chapter-1.pdf"
+  },
+  {
+    "id": "hindi-ch-2",
+    "subjectId": "hindi",
+    "chapterNumber": 2,
+    "title": "Tulsidas — Ram-Lakshman-Parshuram Samvad",
+    "description": "Kshitij: Dialogue between Ram, Lakshman and Parshuram at Sita Swayamvar — poetic devices and meaning.",
+    "pdfUrl": "/pdfs/hindi/chapter-2.pdf",
+    "downloadUrl": "/pdfs/hindi/chapter-2.pdf"
+  },
+  {
+    "id": "hindi-ch-3",
+    "subjectId": "hindi",
+    "chapterNumber": 3,
+    "title": "Dev — Savaiyye aur Kavitt",
+    "description": "Kshitij: Dev's savaiyye describing nature and Krishna bhakti — literary devices and interpretation.",
+    "pdfUrl": "/pdfs/hindi/chapter-3.pdf",
+    "downloadUrl": "/pdfs/hindi/chapter-3.pdf"
+  },
+  {
+    "id": "hindi-ch-4",
+    "subjectId": "hindi",
+    "chapterNumber": 4,
+    "title": "Jayashankar Prasad — Atmaparichay, Ek Geet",
+    "description": "Kshitij: Chhayavad poetry — self-introduction as a lover of the world and a short lyric song.",
+    "pdfUrl": "/pdfs/hindi/chapter-4.pdf",
+    "downloadUrl": "/pdfs/hindi/chapter-4.pdf"
+  },
+  {
+    "id": "hindi-ch-5",
+    "subjectId": "hindi",
+    "chapterNumber": 5,
+    "title": "Suryakant Tripathi Nirala — Utsah, Ek Geet",
+    "description": "Kshitij: Progressive poetry — an ode to the cloud as a symbol of revolution and a personal lyric.",
+    "pdfUrl": "/pdfs/hindi/chapter-5.pdf",
+    "downloadUrl": "/pdfs/hindi/chapter-5.pdf"
+  },
+  {
+    "id": "hindi-ch-6",
+    "subjectId": "hindi",
+    "chapterNumber": 6,
+    "title": "Balgobin Bhagat",
+    "description": "Kshitij Gadya: Ramvriksha Benipuri's portrait of a Kabir-bhakt farmer — values, simplicity and devotion.",
+    "pdfUrl": "/pdfs/hindi/chapter-6.pdf",
+    "downloadUrl": "/pdfs/hindi/chapter-6.pdf"
+  },
+  {
+    "id": "hindi-ch-7",
+    "subjectId": "hindi",
+    "chapterNumber": 7,
+    "title": "Lakhnawi Andaaz",
+    "description": "Kshitij Gadya: Yashpal's humorous sketch of Lucknowi etiquette and the class divide in colonial India.",
+    "pdfUrl": "/pdfs/hindi/chapter-7.pdf",
+    "downloadUrl": "/pdfs/hindi/chapter-7.pdf"
+  },
+  {
+    "id": "hindi-ch-8",
+    "subjectId": "hindi",
+    "chapterNumber": 8,
+    "title": "Maata ka Aanchal",
+    "description": "Kritika: Shivarani Devi's childhood memoir — a child's world of innocence, mother's love and village life.",
+    "pdfUrl": "/pdfs/hindi/chapter-8.pdf",
+    "downloadUrl": "/pdfs/hindi/chapter-8.pdf"
+  },
+  {
+    "id": "hindi-ch-9",
+    "subjectId": "hindi",
+    "chapterNumber": 9,
+    "title": "George Pancham ki Naak",
+    "description": "Kritika: Kamleshwar's satirical story on colonial legacy and post-independence bureaucratic absurdity.",
+    "pdfUrl": "/pdfs/hindi/chapter-9.pdf",
+    "downloadUrl": "/pdfs/hindi/chapter-9.pdf"
+  },
+  {
+    "id": "hindi-ch-10",
+    "subjectId": "hindi",
+    "chapterNumber": 10,
+    "title": "Saana-Saana Haath Jodi",
+    "description": "Kritika: Madhuri Parasuraman's travel memoir through Sikkim — nature, culture and spiritual reflection.",
+    "pdfUrl": "/pdfs/hindi/chapter-10.pdf",
+    "downloadUrl": "/pdfs/hindi/chapter-10.pdf"
+  },
+  {
+    "id": "eng-ch-1",
+    "subjectId": "english",
+    "chapterNumber": 1,
+    "title": "A Letter to God",
+    "description": "First Flight: Lencho's unshakeable faith in God and the irony of human generosity mistaken for divine grace.",
+    "pdfUrl": "/pdfs/english/chapter-1.pdf",
+    "downloadUrl": "/pdfs/english/chapter-1.pdf"
+  },
+  {
+    "id": "eng-ch-2",
+    "subjectId": "english",
+    "chapterNumber": 2,
+    "title": "Nelson Mandela: Long Walk to Freedom",
+    "description": "First Flight: Mandela's autobiography excerpt covering his inauguration and the struggle against apartheid.",
+    "pdfUrl": "/pdfs/english/chapter-2.pdf",
+    "downloadUrl": "/pdfs/english/chapter-2.pdf"
+  },
+  {
+    "id": "eng-ch-3",
+    "subjectId": "english",
+    "chapterNumber": 3,
+    "title": "Two Stories about Flying",
+    "description": "First Flight: Black Aeroplane — a mysterious encounter; and His First Flight — a young seagull's courage.",
+    "pdfUrl": "/pdfs/english/chapter-3.pdf",
+    "downloadUrl": "/pdfs/english/chapter-3.pdf"
+  },
+  {
+    "id": "eng-ch-4",
+    "subjectId": "english",
+    "chapterNumber": 4,
+    "title": "From the Diary of Anne Frank",
+    "description": "First Flight: Anne Frank's diary entries reflecting on loneliness, growing up, and war-time Germany.",
+    "pdfUrl": "/pdfs/english/chapter-4.pdf",
+    "downloadUrl": "/pdfs/english/chapter-4.pdf"
+  },
+  {
+    "id": "eng-ch-5",
+    "subjectId": "english",
+    "chapterNumber": 5,
+    "title": "The Hundred Dresses — I",
+    "description": "First Flight: Wanda Petronski endures mockery in school — themes of poverty, identity and bullying.",
+    "pdfUrl": "/pdfs/english/chapter-5.pdf",
+    "downloadUrl": "/pdfs/english/chapter-5.pdf"
+  },
+  {
+    "id": "eng-ch-6",
+    "subjectId": "english",
+    "chapterNumber": 6,
+    "title": "The Hundred Dresses — II",
+    "description": "First Flight: Resolution of Wanda's story — guilt, empathy, and the belated recognition of her talent.",
+    "pdfUrl": "/pdfs/english/chapter-6.pdf",
+    "downloadUrl": "/pdfs/english/chapter-6.pdf"
+  },
+  {
+    "id": "eng-ch-7",
+    "subjectId": "english",
+    "chapterNumber": 7,
+    "title": "Glimpses of India",
+    "description": "First Flight: Three vignettes — a Goan bakery, Coorg's culture, and the tea gardens of Assam.",
+    "pdfUrl": "/pdfs/english/chapter-7.pdf",
+    "downloadUrl": "/pdfs/english/chapter-7.pdf"
+  },
+  {
+    "id": "eng-ch-8",
+    "subjectId": "english",
+    "chapterNumber": 8,
+    "title": "Mijbil the Otter",
+    "description": "First Flight: Gavin Maxwell's story of adopting a young otter — friendship, responsibility and adaptation.",
+    "pdfUrl": "/pdfs/english/chapter-8.pdf",
+    "downloadUrl": "/pdfs/english/chapter-8.pdf"
+  },
+  {
+    "id": "eng-ch-9",
+    "subjectId": "english",
+    "chapterNumber": 9,
+    "title": "A Triumph of Surgery",
+    "description": "Footprints Without Feet: A pampered dog is saved by a vet's prescription of exercise and simple living.",
+    "pdfUrl": "/pdfs/english/chapter-9.pdf",
+    "downloadUrl": "/pdfs/english/chapter-9.pdf"
+  },
+  {
+    "id": "eng-ch-10",
+    "subjectId": "english",
+    "chapterNumber": 10,
+    "title": "The Thief's Story",
+    "description": "Footprints Without Feet: Ruskin Bond's story of a young thief whose conscience is awakened by trust.",
+    "pdfUrl": "/pdfs/english/chapter-10.pdf",
+    "downloadUrl": "/pdfs/english/chapter-10.pdf"
+  },
+  {
+    "id": "eng-ch-11",
+    "subjectId": "english",
+    "chapterNumber": 11,
+    "title": "The Midnight Visitor",
+    "description": "Footprints Without Feet: A clever secret agent outwits a rival spy in a tense, suspenseful encounter.",
+    "pdfUrl": "/pdfs/english/chapter-11.pdf",
+    "downloadUrl": "/pdfs/english/chapter-11.pdf"
+  },
+  {
+    "id": "eng-ch-12",
+    "subjectId": "english",
+    "chapterNumber": 12,
+    "title": "A Question of Trust",
+    "description": "Footprints Without Feet: A professional thief is outwitted by a woman — a story of irony and deception.",
+    "pdfUrl": "/pdfs/english/chapter-12.pdf",
+    "downloadUrl": "/pdfs/english/chapter-12.pdf"
+  },
+  {
+    "id": "san-ch-1",
+    "subjectId": "sanskrit",
+    "chapterNumber": 1,
+    "title": "Shuchiparyaavaranam",
+    "description": "Shemushi: A poem about environmental cleanliness — the duty of every citizen to keep surroundings pure.",
+    "pdfUrl": "/pdfs/sanskrit/chapter-1.pdf",
+    "downloadUrl": "/pdfs/sanskrit/chapter-1.pdf"
+  },
+  {
+    "id": "san-ch-2",
+    "subjectId": "sanskrit",
+    "chapterNumber": 2,
+    "title": "Buddhi Balam Tato Balam",
+    "description": "Shemushi: Intellect is supreme strength — a tale illustrating that wisdom defeats physical power.",
+    "pdfUrl": "/pdfs/sanskrit/chapter-2.pdf",
+    "downloadUrl": "/pdfs/sanskrit/chapter-2.pdf"
+  },
+  {
+    "id": "san-ch-3",
+    "subjectId": "sanskrit",
+    "chapterNumber": 3,
+    "title": "Vyaayaamah Sarvada Pathyah",
+    "description": "Shemushi: Exercise is always beneficial — a prose chapter on the importance of physical fitness.",
+    "pdfUrl": "/pdfs/sanskrit/chapter-3.pdf",
+    "downloadUrl": "/pdfs/sanskrit/chapter-3.pdf"
+  },
+  {
+    "id": "san-ch-4",
+    "subjectId": "sanskrit",
+    "chapterNumber": 4,
+    "title": "Shareer Saushtavam",
+    "description": "Shemushi: Physical well-being and body fitness as the foundation of a productive and healthy life.",
+    "pdfUrl": "/pdfs/sanskrit/chapter-4.pdf",
+    "downloadUrl": "/pdfs/sanskrit/chapter-4.pdf"
+  },
+  {
+    "id": "san-ch-5",
+    "subjectId": "sanskrit",
+    "chapterNumber": 5,
+    "title": "Jeevanam Mayi",
+    "description": "Shemushi: A lyrical poem on the beauty and vitality of life — celebrating nature and existence.",
+    "pdfUrl": "/pdfs/sanskrit/chapter-5.pdf",
+    "downloadUrl": "/pdfs/sanskrit/chapter-5.pdf"
+  },
+  {
+    "id": "san-ch-6",
+    "subjectId": "sanskrit",
+    "chapterNumber": 6,
+    "title": "Suktimouktikam",
+    "description": "Shemushi: A collection of wise subhashitas (maxims) teaching moral values through Sanskrit verses.",
+    "pdfUrl": "/pdfs/sanskrit/chapter-6.pdf",
+    "downloadUrl": "/pdfs/sanskrit/chapter-6.pdf"
+  },
+  {
+    "id": "san-ch-7",
+    "subjectId": "sanskrit",
+    "chapterNumber": 7,
+    "title": "Sandhi Prakaranam",
+    "description": "Vyakaranavithi: Rules of sandhi (phonetic combination) — swara, vyanjana and visarga sandhi with examples.",
+    "pdfUrl": "/pdfs/sanskrit/chapter-7.pdf",
+    "downloadUrl": "/pdfs/sanskrit/chapter-7.pdf"
+  },
+  {
+    "id": "san-ch-8",
+    "subjectId": "sanskrit",
+    "chapterNumber": 8,
+    "title": "Shabd Roop",
+    "description": "Vyakaranavithi: Declension tables for common nouns — masculine, feminine and neuter forms across all cases.",
+    "pdfUrl": "/pdfs/sanskrit/chapter-8.pdf",
+    "downloadUrl": "/pdfs/sanskrit/chapter-8.pdf"
+  }
+]

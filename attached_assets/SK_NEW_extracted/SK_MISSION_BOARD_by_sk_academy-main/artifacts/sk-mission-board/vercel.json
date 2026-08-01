@@ -1,0 +1,6 @@
+{
+  "buildCommand": "cd ../../ && pnpm --filter @workspace/sk-mission-board run build",
+  "installCommand": "cd ../../ && pnpm install",
+  "outputDirectory": "dist/public",
+  "framework": null
+}
