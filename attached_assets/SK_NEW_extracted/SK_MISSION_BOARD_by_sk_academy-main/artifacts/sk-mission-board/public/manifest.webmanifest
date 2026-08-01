@@ -1,0 +1,55 @@
+{
+  "name": "SK Mission Board",
+  "short_name": "SK Board",
+  "description": "Free premium notes and video lectures for Bihar Board Class 10 students. Chapter-wise PDFs for all subjects.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#000314",
+  "theme_color": "#7c3bed",
+  "lang": "en",
+  "categories": ["education"],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192x192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Chapter Notes",
+      "short_name": "Notes",
+      "description": "Access chapter-wise PDF notes",
+      "url": "/notes",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Video Lectures",
+      "short_name": "Videos",
+      "description": "Watch free video lectures",
+      "url": "/videos",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

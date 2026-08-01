@@ -1,0 +1,50 @@
+[
+  {
+    "id": "mathematics",
+    "name": "Mathematics",
+    "icon": "📐",
+    "description": "Algebra, Geometry, Trigonometry & more",
+    "color": "from-blue-600 to-blue-800",
+    "accentColor": "blue"
+  },
+  {
+    "id": "science",
+    "name": "Science",
+    "icon": "🔬",
+    "description": "Physics, Chemistry & Biology",
+    "color": "from-green-600 to-emerald-800",
+    "accentColor": "green"
+  },
+  {
+    "id": "social-science",
+    "name": "Social Science",
+    "icon": "🌍",
+    "description": "History, Geography, Civics & Economics",
+    "color": "from-orange-600 to-amber-800",
+    "accentColor": "orange"
+  },
+  {
+    "id": "hindi",
+    "name": "Hindi",
+    "icon": "📖",
+    "description": "Kshitij, Kritika & Vyakaran",
+    "color": "from-red-600 to-rose-800",
+    "accentColor": "red"
+  },
+  {
+    "id": "english",
+    "name": "English",
+    "icon": "🇬🇧",
+    "description": "First Flight, Footprints & Grammar",
+    "color": "from-indigo-600 to-violet-800",
+    "accentColor": "indigo"
+  },
+  {
+    "id": "sanskrit",
+    "name": "Sanskrit",
+    "icon": "🕉️",
+    "description": "Shemushi, Vyakaranavithi & Translation",
+    "color": "from-yellow-600 to-amber-700",
+    "accentColor": "yellow"
+  }
+]
