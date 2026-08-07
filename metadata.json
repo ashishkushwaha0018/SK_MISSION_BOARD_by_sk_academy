@@ -1,0 +1,6 @@
+{
+  "name": "SK Mission Board",
+  "description": "Educational app with chapter notes, PDF viewer, downloads manager, and video lessons.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

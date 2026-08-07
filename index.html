@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#000314">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Viewport: covers all Android screen sizes, no auto-scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+
+    <!-- Primary SEO -->
+    <title>SK MISSION BOARD — Bihar Board Class 10 Study Platform</title>
+    <meta name="description" content="SK MISSION BOARD — Free premium notes and video lectures for Bihar Board Class 10 students. Chapter-wise PDFs, all subjects covered." />
+    <meta name="robots" content="index, follow" />
+    <meta name="keywords" content="Bihar Board Class 10, BSEB notes, chapter PDFs, free study material, SK Mission Board" />
+    <meta name="author" content="SK MISSION BOARD by SK Academy" />
+
+    <!-- PWA & Theme -->
+    <meta name="theme-color" content="#7c3bed" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="SK MISSION BOARD" />
+
+    <!-- Apple PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SK MISSION BOARD" />
+
+    <!-- Android WebView compatibility -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="SK MISSION BOARD — Bihar Board Class 10 Study Platform" />
+    <meta property="og:description" content="Free premium notes and video lectures for Bihar Board Class 10 students. Chapter-wise PDFs, all subjects covered." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://skmissionboardin.vercel.app" />
+    <meta property="og:image" content="/icons/icon-512x512.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:site_name" content="SK MISSION BOARD" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SK MISSION BOARD — Bihar Board Class 10 Study Platform" />
+    <meta name="twitter:description" content="Free premium notes and video lectures for Bihar Board Class 10 students." />
+    <meta name="twitter:image" content="/icons/icon-512x512.png" />
+
+    <!-- Icons & Manifest -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <!-- Critical styles — eliminate ALL pre-React flicker -->
+    <style>
+      /* Dark canvas from the very first byte — no white flash ever */
+      *, *::before, *::after { box-sizing: border-box; }
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #000314;
+        overflow-x: hidden;
+        -webkit-tap-highlight-color: transparent;
+      }
+      #root {
+        min-height: 100dvh;
+        background-color: #000314;
+      }
+      /* Pre-React loading overlay — covers everything until SplashScreen mounts */
+      #sk-pre-splash {
+        position: fixed;
+        inset: 0;
+        background: #000314;
+        z-index: 999999;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Pre-React overlay: keeps screen dark while JS parses and React mounts.
+         SplashScreen removes this once it has painted its own dark background. -->
+    <div id="sk-pre-splash"></div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
