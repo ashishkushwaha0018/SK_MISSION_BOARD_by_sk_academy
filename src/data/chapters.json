@@ -212,8 +212,8 @@
     "chapterNumber": 10,
     "title": "The Human Eye and the Colourful World",
     "description": "Structure of the eye, defects of vision, dispersion of light, atmospheric refraction and scattering.",
-    "pdfUrl": "/pdfs/science/[S]The Human Eye and the Colourful World.pdf",
-    "downloadUrl": "/pdfs/science/[S]The Human Eye and the Colourful World.pdf"
+    "pdfUrl": "/pdfs/science/chapter-10.pdf",
+    "downloadUrl": "/pdfs/science/chapter-10.pdf"
   },
   {
     "id": "sci-ch-11",
@@ -221,8 +221,8 @@
     "chapterNumber": 11,
     "title": "Electricity",
     "description": "Ohm's law, resistance, series and parallel circuits, heating effect of electric current and electric power.",
-    "pdfUrl": "/pdfs/science/Electricity.pdf",
-    "downloadUrl": "/pdfs/science/Electricity.pdf"
+    "pdfUrl": "/pdfs/science/chapter-11.pdf",
+    "downloadUrl": "/pdfs/science/chapter-11.pdf"
   },
   {
     "id": "sci-ch-12",
@@ -230,8 +230,8 @@
     "chapterNumber": 12,
     "title": "Magnetic Effects of Electric Current",
     "description": "Oersted's experiment, Fleming's rules, electric motor, electromagnetic induction and AC/DC generators.",
-    "pdfUrl": "/pdfs/science/Magnetic Effects of Electric Current.pdf",
-    "downloadUrl": "/pdfs/science/Magnetic Effects of Electric Current.pdf"
+    "pdfUrl": "/pdfs/science/chapter-12.pdf",
+    "downloadUrl": "/pdfs/science/chapter-12.pdf"
   },
   {
     "id": "sci-ch-13",
@@ -239,8 +239,8 @@
     "chapterNumber": 13,
     "title": "Our Environment",
     "description": "Ecosystem components, food chains, ozone layer depletion, and management of waste and natural resources.",
-    "pdfUrl": "/pdfs/science/Our Environment.pdf",
-    "downloadUrl": "/pdfs/science/Our Environment.pdf"
+    "pdfUrl": "/pdfs/science/chapter-13.pdf",
+    "downloadUrl": "/pdfs/science/chapter-13.pdf"
   },
   {
     "id": "sst-ch-1",

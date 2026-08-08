@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import * as pdfjsLib from "pdfjs-dist";
+import workerUrl from "pdfjs-dist/build/pdf.worker.min.js?url";
 import {
   X,
   ZoomIn,
@@ -13,14 +14,15 @@ import {
   FileText,
   AlertCircle,
   CheckCircle2,
-  Eye
+  Eye,
+  ExternalLink,
 } from "lucide-react";
 import { toast } from "sonner";
 import { addPdfToDownloads, getOfflinePdfBlob, isPdfDownloaded } from "@/lib/downloadManager";
 
-// Set worker CDN for pdfjs-dist
+// Set worker URL using Vite bundled asset
 try {
-  pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js`;
+  pdfjsLib.GlobalWorkerOptions.workerSrc = workerUrl;
 } catch (e) {
   console.warn("Could not set PDF worker URL", e);
 }
@@ -83,17 +85,35 @@ export function PdfViewerModal({
       try {
         let activeUrl = pdfUrl.startsWith("http") || pdfUrl.startsWith("blob:") ? pdfUrl : encodeURI(pdfUrl);
 
-        // Try getting offline cached blob if available
+        let pdfData: ArrayBuffer | null = null;
+
+        // 1. Try offline stored PDF from IndexedDB first
         if (chapterId) {
           const cachedBlob = await getOfflinePdfBlob(chapterId);
           if (cachedBlob && isMounted) {
-            const url = URL.createObjectURL(cachedBlob);
-            setObjectUrl(url);
-            activeUrl = url;
+            pdfData = await cachedBlob.arrayBuffer();
           }
         }
 
-        const loadingTask = pdfjsLib.getDocument(activeUrl);
+        // 2. Fetch network PDF if not in offline cache
+        if (!pdfData) {
+          const response = await fetch(activeUrl);
+          if (!response.ok) {
+            throw new Error(`HTTP Error ${response.status}: Failed to fetch PDF`);
+          }
+
+          const contentType = response.headers.get("content-type");
+          if (contentType && contentType.toLowerCase().includes("text/html")) {
+            throw new Error("Received HTML webpage instead of PDF document");
+          }
+
+          pdfData = await response.arrayBuffer();
+        }
+
+        if (!isMounted || !pdfData) return;
+
+        // 3. Load PDF directly from binary ArrayBuffer
+        const loadingTask = pdfjsLib.getDocument({ data: pdfData });
         const pdf = await loadingTask.promise;
 
         if (!isMounted) return;
@@ -101,11 +121,13 @@ export function PdfViewerModal({
         setPdfDocProxy(pdf);
         setNumPages(pdf.numPages);
         setLoading(false);
+        setError(null);
       } catch (err: any) {
-        console.error("PDF.js loading failed, falling back:", err);
+        console.error("PDF.js loading failed:", err);
         if (isMounted) {
           setLoading(false);
           setNumPages(0);
+          setError(err?.message || "Failed to render PDF canvas.");
         }
       }
     }
@@ -380,6 +402,18 @@ export function PdfViewerModal({
             </button>
           </div>
 
+          {/* Open in New Tab Button */}
+          <a
+            href={pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-colors flex items-center gap-1.5"
+            title="Open PDF in New Window"
+          >
+            <ExternalLink size={18} />
+            <span className="hidden lg:inline text-xs font-medium">Open</span>
+          </a>
+
           {/* Download Button */}
           <button
             onClick={handleDownload}
@@ -420,7 +454,7 @@ export function PdfViewerModal({
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
-        className="flex-1 overflow-y-auto overflow-x-auto p-4 md:p-8 flex flex-col items-center gap-6 scrollbar-thin scrollbar-thumb-purple-500/30 select-none"
+        className="flex-1 overflow-y-auto overflow-x-auto p-4 md:p-8 flex flex-col items-center justify-start gap-6 scrollbar-thin scrollbar-thumb-purple-500/30 select-none"
       >
         {loading && (
           <div className="my-auto flex flex-col items-center justify-center gap-4 py-20 text-center">
@@ -463,14 +497,34 @@ export function PdfViewerModal({
           </div>
         )}
 
-        {/* Direct Object Embed Fallback if needed */}
+        {/* Direct Action Card Fallback if canvas rendering is not supported or failed */}
         {!loading && numPages === 0 && (
-          <div className="w-full max-w-4xl h-full flex flex-col items-center justify-center bg-slate-900 rounded-2xl border border-white/10 p-4">
-            <iframe
-              src={objectUrl || pdfUrl}
-              className="w-full h-[75vh] rounded-xl border-0"
-              title={title}
-            />
+          <div className="my-auto w-full max-w-md bg-slate-900/90 border border-purple-500/30 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center text-center gap-5 shadow-2xl animate-in zoom-in-95">
+            <div className="w-16 h-16 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shadow-inner">
+              <FileText size={32} />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-white">{title}</h3>
+              <p className="text-xs text-gray-300 mt-1 max-w-xs mx-auto leading-relaxed">
+                {error || "PDF loaded. Click below to view or download the chapter notes."}
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-3 w-full mt-1">
+              <a
+                href={pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold shadow-lg shadow-purple-600/30 transition-all hover:scale-[1.02]"
+              >
+                <ExternalLink size={16} /> Open PDF in New Tab
+              </a>
+              <button
+                onClick={handleDownload}
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-semibold border border-white/10 transition-all hover:scale-[1.02]"
+              >
+                <Download size={16} /> Download PDF
+              </button>
+            </div>
           </div>
         )}
       </div>
