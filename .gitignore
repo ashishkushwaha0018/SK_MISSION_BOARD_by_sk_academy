@@ -1,6 +1,9 @@
 node_modules/
 build/
 dist/
+artifacts/
+.vite/
+bun.lock
 coverage/
 .DS_Store
 *.log
