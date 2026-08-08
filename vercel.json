@@ -1,6 +1,10 @@
 {
-  "buildCommand": "cd ../../ && pnpm --filter @workspace/sk-mission-board run build",
-  "installCommand": "cd ../../ && pnpm install",
-  "outputDirectory": "dist/public",
-  "framework": null
+  "buildCommand": "pnpm --filter @workspace/sk-mission-board build",
+  "outputDirectory": "artifacts/sk-mission-board/dist/public",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

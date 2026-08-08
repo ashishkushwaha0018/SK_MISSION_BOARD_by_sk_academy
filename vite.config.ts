@@ -19,7 +19,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist',
+    outDir: 'artifacts/sk-mission-board/dist/public',
     emptyOutDir: true,
   },
   server: {
