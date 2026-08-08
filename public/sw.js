@@ -1,6 +1,6 @@
-// SK Mission Board — Service Worker v6
-const CACHE_NAME = 'sk-mission-board-v6';
-const STATIC_CACHE = 'sk-static-v6';
+// SK Mission Board — Service Worker v10
+const CACHE_NAME = 'sk-mission-board-v10';
+const STATIC_CACHE = 'sk-static-v10';
 
 // Core shell assets to pre-cache on install
 const PRECACHE_URLS = [
@@ -9,23 +9,26 @@ const PRECACHE_URLS = [
   '/manifest.webmanifest',
   '/favicon.png',
   '/logo.png',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png',
 ];
 
-// ── Install: pre-cache shell ──────────────────────────────────────────────────
+// ── Install: pre-cache shell & skip waiting ───────────────────────────────────
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(PRECACHE_URLS).catch(() => {
-        return Promise.resolve();
-      });
+      return cache.addAll(PRECACHE_URLS).catch(() => Promise.resolve());
     })
   );
-  self.skipWaiting();
 });
 
-// ── Activate: purge ALL old caches ───────────────────────────────────────────
+// ── Listen for Skip Waiting ───────────────────────────────────────────────────
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
+
+// ── Activate: purge ALL old caches & claim clients immediately ────────────────
 self.addEventListener('activate', (event) => {
   const validCaches = [CACHE_NAME, STATIC_CACHE];
   event.waitUntil(
@@ -35,9 +38,8 @@ self.addEventListener('activate', (event) => {
           .filter((name) => !validCaches.includes(name))
           .map((name) => caches.delete(name))
       )
-    )
+    ).then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
 // ── Fetch: caching strategies ─────────────────────────────────────────────────
@@ -88,10 +90,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Vite-bundled assets (JS, CSS, fonts, hashed images, hashed video):
-  // These have content-hashed filenames → safe to cache forever (cache-first).
-  // The intro video (intro.mp4 bundled as /assets/intro-HASH.mp4) is handled here,
-  // giving 100% offline playback after the first load.
+  // Vite-bundled assets (JS, CSS, fonts, hashed images):
   if (
     url.pathname.startsWith('/assets/') ||
     url.pathname.startsWith('/icons/') ||
@@ -99,11 +98,7 @@ self.addEventListener('fetch', (event) => {
     url.pathname.endsWith('.css') ||
     url.pathname.endsWith('.woff2') ||
     url.pathname.endsWith('.woff') ||
-    url.pathname.endsWith('.ttf') ||
-    url.pathname.endsWith('.png') ||
-    url.pathname.endsWith('.svg') ||
-    url.pathname.endsWith('.webp') ||
-    url.pathname.endsWith('.jpg')
+    url.pathname.endsWith('.ttf')
   ) {
     event.respondWith(
       caches.match(request).then((cached) => {

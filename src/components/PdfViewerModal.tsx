@@ -99,12 +99,15 @@ export function PdfViewerModal({
         if (!pdfData) {
           const response = await fetch(activeUrl);
           if (!response.ok) {
-            throw new Error(`HTTP Error ${response.status}: Failed to fetch PDF`);
+            if (response.status === 404) {
+              throw new Error("This chapter PDF notes are currently being updated and will be available soon.");
+            }
+            throw new Error(`HTTP Error ${response.status}: Unable to load PDF notes.`);
           }
 
           const contentType = response.headers.get("content-type");
           if (contentType && contentType.toLowerCase().includes("text/html")) {
-            throw new Error("Received HTML webpage instead of PDF document");
+            throw new Error("PDF file not found on server.");
           }
 
           pdfData = await response.arrayBuffer();
