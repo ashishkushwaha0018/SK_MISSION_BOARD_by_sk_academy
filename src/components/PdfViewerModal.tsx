@@ -79,7 +79,7 @@ export function PdfViewerModal({
 
     async function loadPdf() {
       try {
-        let activeUrl = pdfUrl;
+        let activeUrl = pdfUrl.startsWith("http") || pdfUrl.startsWith("blob:") ? pdfUrl : encodeURI(pdfUrl);
 
         // Try getting offline cached blob if available
         if (chapterId) {

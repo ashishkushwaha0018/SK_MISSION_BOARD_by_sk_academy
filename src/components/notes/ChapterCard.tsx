@@ -80,7 +80,9 @@ export function ChapterCard({
     e.stopPropagation();
     try {
       setDownloading(true);
-      const res = await fetch(chapter.downloadUrl || chapter.pdfUrl);
+      const rawUrl = chapter.downloadUrl || chapter.pdfUrl;
+      const safeUrl = rawUrl.startsWith("http") || rawUrl.startsWith("blob:") ? rawUrl : encodeURI(rawUrl);
+      const res = await fetch(safeUrl);
       if (!res.ok) throw new Error("Failed to fetch PDF");
       const blob = await res.blob();
 

@@ -118,7 +118,8 @@ export async function addPdfToDownloads(pdf: Omit<DownloadedPdf, "id" | "downloa
   } else {
     // Attempt to fetch blob and store offline
     try {
-      const res = await fetch(pdf.fileUrl);
+      const safeUrl = pdf.fileUrl.startsWith("http") || pdf.fileUrl.startsWith("blob:") ? pdf.fileUrl : encodeURI(pdf.fileUrl);
+      const res = await fetch(safeUrl);
       if (res.ok) {
         const fetchedBlob = await res.blob();
         await savePdfBlobToOffline(newItem.id, fetchedBlob);

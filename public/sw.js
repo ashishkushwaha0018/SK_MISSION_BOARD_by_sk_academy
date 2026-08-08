@@ -55,14 +55,19 @@ self.addEventListener('fetch', (event) => {
   // Skip cross-origin requests (YouTube, Google Fonts, analytics, etc.)
   if (url.origin !== self.location.origin) return;
 
+  // Skip range requests and video/audio requests so browser handles byte streaming directly
+  if (request.headers.has('range') || request.destination === 'video' || request.destination === 'audio' || url.pathname.endsWith('.mp4')) {
+    return;
+  }
+
   // PDFs: network-first, cache as fallback
   if (url.pathname.startsWith('/pdfs/')) {
     event.respondWith(
       fetch(request)
         .then((response) => {
-          if (response.ok) {
+          if (response.ok && response.status === 200) {
             const clone = response.clone();
-            caches.open(STATIC_CACHE).then((cache) => cache.put(request, clone));
+            caches.open(STATIC_CACHE).then((cache) => cache.put(request, clone)).catch(() => {});
           }
           return response;
         })
@@ -94,16 +99,15 @@ self.addEventListener('fetch', (event) => {
     url.pathname.endsWith('.png') ||
     url.pathname.endsWith('.svg') ||
     url.pathname.endsWith('.webp') ||
-    url.pathname.endsWith('.jpg') ||
-    url.pathname.endsWith('.mp4')
+    url.pathname.endsWith('.jpg')
   ) {
     event.respondWith(
       caches.match(request).then((cached) => {
         if (cached) return cached;
         return fetch(request).then((response) => {
-          if (response.ok) {
+          if (response.ok && response.status === 200) {
             const clone = response.clone();
-            caches.open(STATIC_CACHE).then((cache) => cache.put(request, clone));
+            caches.open(STATIC_CACHE).then((cache) => cache.put(request, clone)).catch(() => {});
           }
           return response;
         });
