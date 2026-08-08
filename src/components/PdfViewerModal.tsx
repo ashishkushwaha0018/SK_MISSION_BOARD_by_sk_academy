@@ -54,6 +54,7 @@ export function PdfViewerModal({
   const [downloaded, setDownloaded] = useState<boolean>(false);
   const [downloading, setDownloading] = useState<boolean>(false);
   const [objectUrl, setObjectUrl] = useState<string | null>(null);
+  const [pdfDocProxy, setPdfDocProxy] = useState<pdfjsLib.PDFDocumentProxy | null>(null);
 
   const containerRef = useRef<HTMLDivElement>(null);
   const pageRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -76,6 +77,7 @@ export function PdfViewerModal({
     setNumPages(0);
     setCurrentPage(1);
     setZoom(1.0);
+    setPdfDocProxy(null);
 
     async function loadPdf() {
       try {
@@ -96,17 +98,14 @@ export function PdfViewerModal({
 
         if (!isMounted) return;
 
+        setPdfDocProxy(pdf);
         setNumPages(pdf.numPages);
         setLoading(false);
-
-        // Render pages on canvas
-        renderPages(pdf);
       } catch (err: any) {
         console.error("PDF.js loading failed, falling back:", err);
         if (isMounted) {
-          // Fallback mechanism: pdfjs failed or worker blocked, allow direct object view
           setLoading(false);
-          setNumPages(10); // fallback page count estimate
+          setNumPages(0);
         }
       }
     }
@@ -121,15 +120,15 @@ export function PdfViewerModal({
     };
   }, [isOpen, pdfUrl, chapterId]);
 
-  // Render canvas pages
-  const renderPages = async (pdfDoc: pdfjsLib.PDFDocumentProxy) => {
+  // Render canvas pages whenever pdfDocProxy, loading, numPages or zoom changes
+  const renderPages = useCallback(async (pdfDoc: pdfjsLib.PDFDocumentProxy, currentZoom: number) => {
     for (let i = 1; i <= pdfDoc.numPages; i++) {
       try {
         const page = await pdfDoc.getPage(i);
         const canvas = document.getElementById(`pdf-canvas-${i}`) as HTMLCanvasElement;
         if (!canvas) continue;
 
-        const viewport = page.getViewport({ scale: 1.5 * zoom });
+        const viewport = page.getViewport({ scale: 1.5 * currentZoom });
         const context = canvas.getContext("2d");
         if (!context) continue;
 
@@ -146,20 +145,17 @@ export function PdfViewerModal({
         console.warn(`Error rendering page ${i}:`, err);
       }
     }
-  };
+  }, []);
 
-  // Re-render pages when zoom changes
+  // Trigger page rendering as soon as canvases mount into the DOM
   useEffect(() => {
-    if (!loading && numPages > 0) {
-      // Small debounce
-      const timeout = setTimeout(() => {
-        pdfjsLib.getDocument(objectUrl || pdfUrl).promise.then((pdf) => {
-          renderPages(pdf);
-        }).catch(() => {});
-      }, 150);
-      return () => clearTimeout(timeout);
+    if (!loading && pdfDocProxy && numPages > 0) {
+      const timer = setTimeout(() => {
+        renderPages(pdfDocProxy, zoom);
+      }, 50);
+      return () => clearTimeout(timer);
     }
-  }, [zoom, loading, numPages, objectUrl, pdfUrl]);
+  }, [loading, pdfDocProxy, numPages, zoom, renderPages]);
 
   // Setup Intersection Observer for current page indicator
   useEffect(() => {
