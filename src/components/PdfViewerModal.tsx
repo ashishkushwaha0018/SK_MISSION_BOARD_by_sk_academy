@@ -402,16 +402,16 @@ export function PdfViewerModal({
             </button>
           </div>
 
-          {/* Open in New Tab Button */}
+          {/* Open PDF Button — Always visible on all screens in header toolbar */}
           <a
             href={pdfUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-colors flex items-center gap-1.5"
-            title="Open PDF in New Window"
+            className="px-2.5 py-1.5 rounded-lg bg-purple-600/30 border border-purple-500/50 hover:bg-purple-600 text-white transition-all flex items-center gap-1.5 shrink-0 shadow-sm"
+            title="Open PDF in New Tab"
           >
-            <ExternalLink size={18} />
-            <span className="hidden lg:inline text-xs font-medium">Open</span>
+            <ExternalLink size={15} className="text-purple-300" />
+            <span className="text-xs font-semibold text-purple-200">Open PDF</span>
           </a>
 
           {/* Download Button */}

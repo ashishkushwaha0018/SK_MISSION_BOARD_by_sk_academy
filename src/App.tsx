@@ -47,15 +47,8 @@ function Router() {
 }
 
 function App() {
-  const [splashDone, setSplashDone] = useState<boolean>(() => {
-    try {
-      return sessionStorage.getItem(SPLASH_KEY) === '1';
-    } catch {
-      return false;
-    }
-  });
-
-  const [fadeInStarted, setFadeInStarted] = useState(splashDone);
+  const [splashDone, setSplashDone] = useState<boolean>(false);
+  const [fadeInStarted, setFadeInStarted] = useState<boolean>(false);
 
   const handleSplashFinished = useCallback(() => {
     try {

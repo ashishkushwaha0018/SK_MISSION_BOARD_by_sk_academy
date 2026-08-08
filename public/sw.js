@@ -1,8 +1,6 @@
-// SK Mission Board — Service Worker v5
-// v5: intro video is now a bundled Vite asset (hashed URL under /assets/).
-//     Cache strategy for /assets/ is already cache-first → offline support automatic.
-const CACHE_NAME = 'sk-mission-board-v5';
-const STATIC_CACHE = 'sk-static-v5';
+// SK Mission Board — Service Worker v6
+const CACHE_NAME = 'sk-mission-board-v6';
+const STATIC_CACHE = 'sk-static-v6';
 
 // Core shell assets to pre-cache on install
 const PRECACHE_URLS = [
@@ -20,7 +18,6 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(PRECACHE_URLS).catch(() => {
-        // Don't fail install if some assets are missing
         return Promise.resolve();
       });
     })
@@ -28,7 +25,7 @@ self.addEventListener('install', (event) => {
   self.skipWaiting();
 });
 
-// ── Activate: remove ALL old caches ───────────────────────────────────────────
+// ── Activate: purge ALL old caches ───────────────────────────────────────────
 self.addEventListener('activate', (event) => {
   const validCaches = [CACHE_NAME, STATIC_CACHE];
   event.waitUntil(
@@ -52,34 +49,36 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(request.url);
 
-  // Skip cross-origin requests (YouTube, Google Fonts, analytics, etc.)
+  // Skip cross-origin requests
   if (url.origin !== self.location.origin) return;
 
-  // Skip range requests and video/audio requests so browser handles byte streaming directly
-  if (request.headers.has('range') || request.destination === 'video' || request.destination === 'audio' || url.pathname.endsWith('.mp4')) {
+  // PDFs: NEVER intercept or cache through SW — force direct browser network requests
+  if (url.pathname.startsWith('/pdfs/')) {
     return;
   }
 
-  // PDFs: network-first, cache as fallback
-  if (url.pathname.startsWith('/pdfs/')) {
+  // Videos and Audio: direct network streaming (skip range request issues)
+  if (
+    request.headers.has('range') ||
+    request.destination === 'video' ||
+    request.destination === 'audio' ||
+    url.pathname.endsWith('.mp4')
+  ) {
+    return;
+  }
+
+  // Logo & Favicon: network-first
+  if (url.pathname === '/logo.png' || url.pathname === '/favicon.png') {
     event.respondWith(
       fetch(request)
         .then((response) => {
-          if (response.ok && response.status === 200) {
+          if (response.ok) {
             const clone = response.clone();
-            caches.open(STATIC_CACHE).then((cache) => cache.put(request, clone)).catch(() => {});
+            caches.open(STATIC_CACHE).then((cache) => cache.put(request, clone));
           }
           return response;
         })
         .catch(() => caches.match(request))
-    );
-    return;
-  }
-
-  // Logo: network-first so fresh logo always shows
-  if (url.pathname === '/logo.png') {
-    event.respondWith(
-      fetch(request).catch(() => caches.match(request))
     );
     return;
   }
