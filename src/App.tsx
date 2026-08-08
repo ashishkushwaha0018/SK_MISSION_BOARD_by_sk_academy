@@ -64,7 +64,7 @@ function App() {
       // ignore
     }
     setSplashDone(true);
-    requestAnimationFrame(() => setFadeInStarted(true));
+    setFadeInStarted(true);
   }, []);
 
   useEffect(() => {

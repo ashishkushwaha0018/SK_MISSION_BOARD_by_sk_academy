@@ -84,6 +84,11 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Skip Vite dev server internal/source files
+  if (url.pathname.startsWith('/src/') || url.pathname.includes('/@') || url.pathname.includes('node_modules')) {
+    return;
+  }
+
   // Vite-bundled assets (JS, CSS, fonts, hashed images, hashed video):
   // These have content-hashed filenames → safe to cache forever (cache-first).
   // The intro video (intro.mp4 bundled as /assets/intro-HASH.mp4) is handled here,
@@ -104,13 +109,17 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       caches.match(request).then((cached) => {
         if (cached) return cached;
-        return fetch(request).then((response) => {
-          if (response.ok && response.status === 200) {
-            const clone = response.clone();
-            caches.open(STATIC_CACHE).then((cache) => cache.put(request, clone)).catch(() => {});
-          }
-          return response;
-        });
+        return fetch(request)
+          .then((response) => {
+            if (response.ok && response.status === 200) {
+              const clone = response.clone();
+              caches.open(STATIC_CACHE).then((cache) => cache.put(request, clone)).catch(() => {});
+            }
+            return response;
+          })
+          .catch(() => {
+            return fetch(request).catch(() => new Response('', { status: 404 }));
+          });
       })
     );
     return;

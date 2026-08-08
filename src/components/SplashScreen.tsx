@@ -28,22 +28,27 @@ export function SplashScreen({ onFinished }: SplashScreenProps) {
       if (done) return;
       done = true;
       setFadingOut(true);
-      setTimeout(() => onFinished(), 550);
+      setTimeout(() => onFinished(), 400);
     }
 
-    // Safety: always finish even if video never fires 'ended'
-    const safety = setTimeout(finish, 8000);
+    // Safety: 3.5s max timeout to prevent black screen if video stalls or fails
+    const safety = setTimeout(finish, 3500);
 
     video.addEventListener('ended', finish, { once: true });
+    video.addEventListener('error', finish, { once: true });
+    video.addEventListener('stalled', finish, { once: true });
 
-    // Start playing immediately — don't wait for any buffering event
+    // Start playing immediately — if autoplay is blocked or fails, reveal app after short delay
     video.play().catch(() => {
-      // Autoplay blocked (some mobile browsers); safety timer will rescue
+      // Autoplay blocked (e.g. iframe policy); finish gracefully
+      setTimeout(finish, 300);
     });
 
     return () => {
       clearTimeout(safety);
       video.removeEventListener('ended', finish);
+      video.removeEventListener('error', finish);
+      video.removeEventListener('stalled', finish);
       done = true;
     };
   }, [onFinished]);
