@@ -1,6 +1,6 @@
-// SK Mission Board — Service Worker v10
-const CACHE_NAME = 'sk-mission-board-v10';
-const STATIC_CACHE = 'sk-static-v10';
+// SK Mission Board — Service Worker v11
+const CACHE_NAME = 'sk-mission-board-v11';
+const STATIC_CACHE = 'sk-static-v11';
 
 // Core shell assets to pre-cache on install
 const PRECACHE_URLS = [
